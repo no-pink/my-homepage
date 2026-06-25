@@ -1,0 +1,130 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--navbar-height);
+  background: rgba(254, 251, 246, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition-normal);
+}
+
+.scrolled {
+  border-bottom-color: rgba(61, 64, 91, 0.08);
+  box-shadow: var(--shadow-sm);
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.logoIcon {
+  font-size: 1.5rem;
+}
+
+.logoText {
+  color: var(--color-text);
+}
+
+.adminDot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-green);
+  flex-shrink: 0;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.navLink {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-full);
+  color: var(--color-text-light);
+  font-size: 0.925rem;
+  transition: all var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+  background: rgba(224, 122, 95, 0.08);
+}
+
+.navLink.active {
+  color: var(--color-primary);
+  background: rgba(224, 122, 95, 0.12);
+  font-weight: 500;
+}
+
+.menuBtn {
+  display: none;
+  padding: var(--space-sm);
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+}
+
+.menuBtn:hover {
+  background: rgba(224, 122, 95, 0.08);
+}
+
+.mobileMenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+
+  .menuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg);
+    border-bottom: 1px solid rgba(61, 64, 91, 0.08);
+    padding: var(--space-sm) var(--space-lg) var(--space-md);
+    gap: var(--space-xs);
+  }
+
+  .mobileLink {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    transition: all var(--transition-fast);
+  }
+
+  .mobileLink:hover,
+  .mobileLink.active {
+    color: var(--color-primary);
+    background: rgba(224, 122, 95, 0.08);
+  }
+}

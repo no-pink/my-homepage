@@ -1,0 +1,36 @@
+.wrapper {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.subtitle {
+  color: var(--color-text-light);
+  font-size: 1rem;
+  margin-bottom: var(--space-lg);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.dividerDot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+}
+
+.dividerLine {
+  width: 48px;
+  height: 1px;
+  background: var(--color-primary-light);
+}

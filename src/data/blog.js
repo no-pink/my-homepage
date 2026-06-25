@@ -1,0 +1,58 @@
+const blogPosts = [
+  {
+    id: "1",
+    title: "React 性能优化的实践与思考",
+    summary: "深入探讨 React 应用中的性能瓶颈以及实用的优化策略，包括虚拟列表、代码分割、Memo化等技术的实际应用。",
+    date: "2026-05-15",
+    tags: ["React", "性能优化", "前端"],
+    readTime: "8 分钟",
+    url: "#",
+  },
+  {
+    id: "2",
+    title: "从零搭建个人主页的全过程",
+    summary: "记录使用 React + Vite 从零开始构建个人主页的完整过程，包括设计思路、技术选型和实现细节。",
+    date: "2026-04-20",
+    tags: ["React", "Vite", "教程"],
+    readTime: "12 分钟",
+    url: "#",
+  },
+  {
+    id: "3",
+    title: "CSS Modules 最佳实践指南",
+    summary: "总结在大型项目中使用 CSS Modules 的经验和技巧，包括命名规范、组合模式、主题切换等。",
+    date: "2026-03-10",
+    tags: ["CSS", "前端工程化"],
+    readTime: "6 分钟",
+    url: "#",
+  },
+  {
+    id: "4",
+    title: "学习 Rust 的第一周：从入门到放弃？",
+    summary: "记录学习 Rust 编程语言第一周的经历，包括所有权系统的理解、常见陷阱和有用的学习资源。",
+    date: "2026-02-28",
+    tags: ["Rust", "学习笔记"],
+    readTime: "10 分钟",
+    url: "#",
+  },
+  {
+    id: "5",
+    title: "构建高效的本地开发环境",
+    summary: "分享我的开发环境配置，包括终端、编辑器、Shell 别名和效率工具，帮助提升日常开发效率。",
+    date: "2026-01-15",
+    tags: ["工具", "效率"],
+    readTime: "7 分钟",
+    url: "#",
+  },
+  {
+    id: "6",
+    title: "2025 年终回顾与 2026 学习计划",
+    summary: "回顾过去一年的成长与收获，制定新一年的学习目标和研究计划。",
+    date: "2025-12-31",
+    tags: ["年度总结", "个人成长"],
+    readTime: "15 分钟",
+    url: "#",
+  },
+];
+
+export default blogPosts;
