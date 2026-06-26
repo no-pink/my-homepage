@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
 import defaultPlan from '@/data/defaultPlan';
 
-const STORAGE_KEY = 'my-home-plan-data';
+const STORAGE_KEY = 'my-home-plan-data-v2';
 
 const PlanContext = createContext(null);
 
