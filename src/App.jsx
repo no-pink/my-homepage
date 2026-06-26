@@ -12,9 +12,12 @@ import TimelinePage from '@/pages/Timeline/Timeline';
 import Blog from '@/pages/Blog/Blog';
 import Contact from '@/pages/Contact/Contact';
 
+// 生产环境部署在 GitHub Pages 子目录下
+const basename = import.meta.env.PROD ? '/my-homepage' : '/';
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <AuthProvider>
         <Navbar />
         <main>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // 将 404 页面重定向到 SPA 入口，并在 hash 中保留原始路径
+    sessionStorage.redirect = location.pathname + location.search;
+    location.replace('/my-homepage/' + (sessionStorage.redirect ? '?p=' + encodeURIComponent(sessionStorage.redirect) : ''));
+  </script>
+</head>
+<body>Redirecting...</body>
+</html>
