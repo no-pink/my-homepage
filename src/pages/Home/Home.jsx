@@ -4,11 +4,11 @@ import profile from '@/data/profile';
 import styles from './Home.module.css';
 
 const quickLinks = [
-  { path: '/about', label: '关于我', desc: '了解更多关于我的故事', icon: User, color: '#E07A5F' },
-  { path: '/skills', label: '技能', desc: '查看我的技术栈', icon: Code, color: '#81B29A' },
-  { path: '/projects', label: '项目', desc: '浏览我的作品集', icon: FolderKanban, color: '#7EA8BE' },
-  { path: '/plan', label: '学习计划', desc: '我的学习与研究规划', icon: ClipboardList, color: '#F2CC8F' },
-  { path: '/contact', label: '联系我', desc: '与我取得联系', icon: Mail, color: '#F4A6B0' },
+  { path: '/about', label: 'About', desc: 'My story & background', icon: User, color: '#E07A5F' },
+  { path: '/skills', label: 'Skills', desc: 'Technical expertise & tools', icon: Code, color: '#81B29A' },
+  { path: '/projects', label: 'Projects', desc: 'Portfolio of work', icon: FolderKanban, color: '#7EA8BE' },
+  { path: '/plan', label: 'Study Plan', desc: 'Learning roadmap & progress', icon: ClipboardList, color: '#F2CC8F' },
+  { path: '/contact', label: 'Contact', desc: 'Get in touch', icon: Mail, color: '#F4A6B0' },
 ];
 
 export default function Home() {
@@ -33,10 +33,10 @@ export default function Home() {
           <p className={styles.heroSubtitle}>{profile.subtitle}</p>
           <div className={styles.heroActions}>
             <Link to="/about" className={styles.btnPrimary}>
-              了解更多 <ArrowRight size={16} />
+              Learn More <ArrowRight size={16} />
             </Link>
             <Link to="/contact" className={styles.btnSecondary}>
-              联系我
+              Contact Me
             </Link>
           </div>
         </div>

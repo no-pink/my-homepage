@@ -51,7 +51,7 @@
   fill: var(--color-primary);
 }
 
-/* 隐身管理入口 */
+/* Hidden admin entry */
 .adminEntry {
   position: absolute;
   right: var(--space-lg);

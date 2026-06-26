@@ -12,7 +12,7 @@ import TimelinePage from '@/pages/Timeline/Timeline';
 import Blog from '@/pages/Blog/Blog';
 import Contact from '@/pages/Contact/Contact';
 
-// 生产环境部署在 GitHub Pages 子目录下
+// When deployed to GitHub Pages under /my-homepage subdirectory
 const basename = import.meta.env.PROD ? '/my-homepage' : '/';
 
 export default function App() {

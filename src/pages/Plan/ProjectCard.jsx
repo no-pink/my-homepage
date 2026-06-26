@@ -31,7 +31,7 @@ export default function ProjectCard({ project }) {
   };
 
   const handleDelete = () => {
-    if (confirm(`确定删除项目「${project.title}」及其所有数据吗？此操作不可恢复。`)) {
+    if (confirm(`Delete project "${project.title}" and all its data? This action cannot be undone.`)) {
       dispatch({ type: 'DELETE_PROJECT', payload: project.id });
     }
   };
@@ -58,13 +58,13 @@ export default function ProjectCard({ project }) {
             className={styles.editInput}
             value={editTitle}
             onChange={(e) => setEditTitle(e.target.value)}
-            placeholder="项目名称"
+            placeholder="Project name"
           />
           <textarea
             className={styles.editTextarea}
             value={editDesc}
             onChange={(e) => setEditDesc(e.target.value)}
-            placeholder="项目描述"
+            placeholder="Project description"
             rows={2}
           />
           <input
@@ -85,8 +85,8 @@ export default function ProjectCard({ project }) {
             ))}
           </div>
           <div className={styles.editActions}>
-            <button className={styles.cancelBtn} onClick={() => setEditing(false)}>取消</button>
-            <button className={styles.confirmBtn} onClick={handleSaveEdit}>保存</button>
+            <button className={styles.cancelBtn} onClick={() => setEditing(false)}>Cancel</button>
+            <button className={styles.confirmBtn} onClick={handleSaveEdit}>Save</button>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@ export default function ProjectCard({ project }) {
               <Calendar size={12} /> {project.deadline}
             </span>
           )}
-          <span className={styles.stepCount}>{project.steps.length} 个步骤</span>
+          <span className={styles.stepCount}>{project.steps.length} steps</span>
         </div>
         {project.description && (
           <p className={styles.projectDesc}>{project.description}</p>
@@ -127,13 +127,13 @@ export default function ProjectCard({ project }) {
         <div className={styles.projectActions}>
           {isAdmin && (
             <>
-              <button className={styles.iconBtn} onClick={() => setShowStepInput(true)} title="添加步骤">
-                <Plus size={16} /> 步骤
+              <button className={styles.iconBtn} onClick={() => setShowStepInput(true)} title="Add step">
+                <Plus size={16} /> Step
               </button>
-              <button className={styles.iconBtn} onClick={() => setEditing(true)} title="编辑">
+              <button className={styles.iconBtn} onClick={() => setEditing(true)} title="Edit">
                 <Edit2 size={14} />
               </button>
-              <button className={styles.iconBtnDanger} onClick={handleDelete} title="删除">
+              <button className={styles.iconBtnDanger} onClick={handleDelete} title="Delete">
                 <Trash2 size={14} />
               </button>
             </>
@@ -143,7 +143,7 @@ export default function ProjectCard({ project }) {
             onClick={() => setExpanded(!expanded)}
           >
             {expanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-            {expanded ? '收起' : '展开'}
+            {expanded ? 'Collapse' : 'Expand'}
           </button>
         </div>
       </div>
@@ -155,7 +155,7 @@ export default function ProjectCard({ project }) {
             className={styles.stepInput}
             value={stepTitle}
             onChange={(e) => setStepTitle(e.target.value)}
-            placeholder="输入步骤名称，按 Enter 添加..."
+            placeholder="Enter step name, press Enter to add..."
             autoFocus
             onBlur={() => !stepTitle && setShowStepInput(false)}
           />
@@ -166,7 +166,7 @@ export default function ProjectCard({ project }) {
       {expanded && (
         <div className={styles.stepsSection}>
           {project.steps.length === 0 ? (
-            <p className={styles.emptySteps}>暂无步骤，点击上方「+ 步骤」添加</p>
+            <p className={styles.emptySteps}>No steps yet. Click "+ Step" above to add one.</p>
           ) : (
             project.steps.map((step) => (
               <StepList

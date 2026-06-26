@@ -16,12 +16,12 @@ export default function Projects() {
   return (
     <div className="page">
       <div className="container">
-        <SectionTitle title="项目作品" subtitle="我参与和开发的项目" />
+        <SectionTitle title="Projects & Work" subtitle="What I've built and contributed to" />
 
         <div className={styles.filters}>
           {[
-            { key: 'all', label: '全部' },
-            { key: 'featured', label: '精选' },
+            { key: 'all', label: 'All' },
+            { key: 'featured', label: 'Featured' },
           ].map(({ key, label }) => (
             <button
               key={key}
@@ -45,7 +45,7 @@ export default function Projects() {
                   </div>
                 )}
                 {project.featured && (
-                  <span className={styles.featuredBadge}>精选</span>
+                  <span className={styles.featuredBadge}>Featured</span>
                 )}
               </div>
               <div className={styles.cardBody}>
@@ -59,12 +59,12 @@ export default function Projects() {
                 <div className={styles.cardActions}>
                   {project.github && (
                     <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.actionLink}>
-                      <FolderGit size={16} /> 源码
+                      <FolderGit size={16} /> Source
                     </a>
                   )}
                   {project.demo && (
                     <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.actionLink}>
-                      <ExternalLink size={16} /> 演示
+                      <ExternalLink size={16} /> Demo
                     </a>
                   )}
                 </div>

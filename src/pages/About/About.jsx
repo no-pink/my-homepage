@@ -7,7 +7,7 @@ export default function About() {
   return (
     <div className="page">
       <div className="container">
-        <SectionTitle title="关于我" subtitle="了解我的故事与热爱" />
+        <SectionTitle title="About Me" subtitle="My story, passions & what drives me" />
 
         <div className={styles.content}>
           <div className={styles.avatarCol}>
@@ -26,9 +26,11 @@ export default function About() {
               <span className={styles.info}>
                 <MapPin size={14} /> {profile.location}
               </span>
-              <a href={`mailto:${profile.email}`} className={styles.info}>
-                <Mail size={14} /> {profile.email}
-              </a>
+              {profile.email && (
+                <a href={`mailto:${profile.email}`} className={styles.info}>
+                  <Mail size={14} /> {profile.email}
+                </a>
+              )}
             </div>
           </div>
 

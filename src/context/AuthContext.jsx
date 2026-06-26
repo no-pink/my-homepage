@@ -4,13 +4,13 @@ const AuthContext = createContext(null);
 
 const STORAGE_KEY = 'my-home-admin-auth';
 
-// SHA-256 哈希值，不是明文密码
-// 修改密码：在浏览器控制台执行 hashPassword('你的新密码') 得到哈希后替换下面这行
+// SHA-256 hash of the password (not plaintext)
+// To change password: run hashPassword('your-new-password') in browser console, replace below
 const PASSWORD_HASH = '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9';
 
 /**
- * 使用浏览器内置 Web Crypto API 做 SHA-256 哈希
- * 密码明文不会出现在 JS 代码中
+ * Uses the browser's built-in Web Crypto API for SHA-256 hashing.
+ * Plaintext password never appears in source code.
  */
 async function hashPassword(password) {
   const encoder = new TextEncoder();

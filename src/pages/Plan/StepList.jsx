@@ -19,7 +19,7 @@ export default function StepList({ step, projectId, projectColor }) {
   };
 
   const handleDelete = () => {
-    if (confirm(`确定删除步骤「${step.title}」吗？`)) {
+    if (confirm(`Delete step "${step.title}"?`)) {
       dispatch({ type: 'DELETE_STEP', payload: { projectId, stepId: step.id } });
     }
   };
@@ -55,17 +55,17 @@ export default function StepList({ step, projectId, projectColor }) {
           </h4>
           {totalTasks > 0 && (
             <span className={styles.stepTaskCount}>
-              {completedTasks}/{totalTasks} 任务完成
+              {completedTasks}/{totalTasks} tasks done
             </span>
           )}
         </div>
         <div className={styles.stepActions}>
           {isAdmin && (
             <>
-              <button className={styles.iconBtnSm} onClick={() => setShowTaskInput(true)} title="添加每日任务">
+              <button className={styles.iconBtnSm} onClick={() => setShowTaskInput(true)} title="Add daily task">
                 <Plus size={14} />
               </button>
-              <button className={styles.iconBtnSmDanger} onClick={handleDelete} title="删除步骤">
+              <button className={styles.iconBtnSmDanger} onClick={handleDelete} title="Delete step">
                 <Trash2 size={13} />
               </button>
             </>
@@ -101,7 +101,7 @@ export default function StepList({ step, projectId, projectColor }) {
             className={styles.taskTitleInput}
             value={taskTitle}
             onChange={(e) => setTaskTitle(e.target.value)}
-            placeholder="每日任务名称..."
+            placeholder="Daily task name..."
             autoFocus
             onBlur={() => !taskTitle && setShowTaskInput(false)}
           />
@@ -112,7 +112,7 @@ export default function StepList({ step, projectId, projectColor }) {
       {expanded && (
         <div className={styles.tasksList}>
           {step.dailyTasks.length === 0 ? (
-            <p className={styles.emptyTasks}>暂无每日任务</p>
+            <p className={styles.emptyTasks}>No daily tasks yet</p>
           ) : (
             step.dailyTasks.map((task) => (
               <DailyTask

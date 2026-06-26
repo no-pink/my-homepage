@@ -4,15 +4,15 @@ import { Briefcase, GraduationCap, Calendar } from 'lucide-react';
 import styles from './Timeline.module.css';
 
 const typeConfig = {
-  work: { icon: Briefcase, label: '工作经历', color: '#E07A5F' },
-  education: { icon: GraduationCap, label: '教育经历', color: '#81B29A' },
+  work: { icon: Briefcase, label: 'Experience', color: '#E07A5F' },
+  education: { icon: GraduationCap, label: 'Education', color: '#81B29A' },
 };
 
 export default function TimelinePage() {
   return (
     <div className="page">
       <div className="container">
-        <SectionTitle title="经历" subtitle="我的成长轨迹" />
+        <SectionTitle title="Journey" subtitle="My growth trajectory" />
 
         <div className={styles.timeline}>
           {timeline.map((section) => {

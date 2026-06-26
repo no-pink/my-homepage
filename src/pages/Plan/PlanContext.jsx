@@ -217,7 +217,7 @@ export function PlanProvider({ children }) {
             dispatch({ type: 'IMPORT_DATA', payload: data });
           }
         } catch {
-          alert('文件格式不正确，请导入 JSON 格式的备份文件');
+          alert('Invalid file format. Please import a valid JSON backup file.');
         }
       };
       reader.readAsText(file);

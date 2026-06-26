@@ -24,22 +24,22 @@ function AddProjectModal({ onClose, onAdd }) {
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <h3>新建学习项目</h3>
+        <h3>New Project</h3>
         <form onSubmit={handleSubmit}>
           <div className={styles.field}>
-            <label>项目名称 *</label>
-            <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="例如：学习 Rust" required autoFocus />
+            <label>Project Name *</label>
+            <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="e.g. Master Rust" required autoFocus />
           </div>
           <div className={styles.field}>
-            <label>项目描述</label>
-            <textarea value={desc} onChange={(e) => setDesc(e.target.value)} placeholder="描述你的学习目标..." rows={3} />
+            <label>Description</label>
+            <textarea value={desc} onChange={(e) => setDesc(e.target.value)} placeholder="Describe your learning goals..." rows={3} />
           </div>
           <div className={styles.field}>
-            <label>截止日期</label>
+            <label>Deadline</label>
             <input type="date" value={deadline} onChange={(e) => setDeadline(e.target.value)} />
           </div>
           <div className={styles.field}>
-            <label>颜色标签</label>
+            <label>Color Label</label>
             <div className={styles.colorPicker}>
               {colors.map((c) => (
                 <button
@@ -53,8 +53,8 @@ function AddProjectModal({ onClose, onAdd }) {
             </div>
           </div>
           <div className={styles.modalActions}>
-            <button type="button" className={styles.cancelBtn} onClick={onClose}>取消</button>
-            <button type="submit" className={styles.confirmBtn}>创建项目</button>
+            <button type="button" className={styles.cancelBtn} onClick={onClose}>Cancel</button>
+            <button type="submit" className={styles.confirmBtn}>Create Project</button>
           </div>
         </form>
       </div>
@@ -97,17 +97,17 @@ function PlanContent() {
     <div className="page">
       <div className={`container ${styles.planPage}`}>
         <div className={styles.header}>
-          <SectionTitle title="学习研究计划" subtitle="规划学习路径，追踪每日进度" />
+          <SectionTitle title="Learning Plan" subtitle="Structured roadmap with daily progress tracking" />
           {isAdmin && (
             <div className={styles.headerActions}>
               <button className={styles.actionBtn} onClick={exportData}>
-                <Download size={16} /> 导出备份
+                <Download size={16} /> Export Backup
               </button>
               <button className={styles.actionBtn} onClick={importData}>
-                <Upload size={16} /> 导入恢复
+                <Upload size={16} /> Import / Restore
               </button>
               <button className={styles.primaryBtn} onClick={() => setShowAddModal(true)}>
-                <Plus size={18} /> 新建项目
+                <Plus size={18} /> New Project
               </button>
             </div>
           )}
@@ -118,29 +118,29 @@ function PlanContent() {
           <div className={styles.statCard}>
             <Target size={20} style={{ color: 'var(--color-primary)' }} />
             <span className={styles.statValue}>{plans.length}</span>
-            <span className={styles.statLabel}>进行中项目</span>
+            <span className={styles.statLabel}>Active Projects</span>
           </div>
           <div className={styles.statCard}>
             <CheckCircle2 size={20} style={{ color: 'var(--color-accent-green)' }} />
             <span className={styles.statValue}>{doneTasks}/{totalTasks}</span>
-            <span className={styles.statLabel}>已完成任务</span>
+            <span className={styles.statLabel}>Tasks Completed</span>
           </div>
           <div className={styles.statCard}>
             <TrendingUp size={20} style={{ color: 'var(--color-accent-yellow)' }} />
             <span className={styles.statValue}>{overallProgress}%</span>
-            <span className={styles.statLabel}>总体进度</span>
+            <span className={styles.statLabel}>Overall Progress</span>
           </div>
           <div className={styles.statCard}>
             <Calendar size={20} style={{ color: 'var(--color-info)' }} />
             <span className={styles.statValue}>{upcomingTasks.length}</span>
-            <span className={styles.statLabel}>待完成任务</span>
+            <span className={styles.statLabel}>Pending Tasks</span>
           </div>
         </div>
 
         {/* Upcoming Alert */}
         {upcomingTasks.length > 0 && (
           <div className={styles.upcomingSection}>
-            <h3>⏰ 待完成 & 已过期任务</h3>
+            <h3>Pending & Overdue Tasks</h3>
             <div className={styles.upcomingList}>
               {upcomingTasks.slice(0, 8).map((task) => (
                 <div key={task.id} className={styles.upcomingItem}>
@@ -150,7 +150,7 @@ function PlanContent() {
                 </div>
               ))}
               {upcomingTasks.length > 8 && (
-                <p className={styles.upcomingMore}>...还有 {upcomingTasks.length - 8} 个待完成任务</p>
+                <p className={styles.upcomingMore}>...and {upcomingTasks.length - 8} more pending</p>
               )}
             </div>
           </div>
@@ -160,10 +160,10 @@ function PlanContent() {
         <div className={styles.projectsList}>
           {plans.length === 0 ? (
             <div className={styles.empty}>
-              <p>还没有学习项目</p>
+              <p>No projects yet</p>
               {isAdmin && (
                 <button className={styles.primaryBtn} onClick={() => setShowAddModal(true)}>
-                  <Plus size={18} /> 创建第一个项目
+                  <Plus size={18} /> Create Your First Project
                 </button>
               )}
             </div>

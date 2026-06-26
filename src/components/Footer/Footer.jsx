@@ -17,12 +17,12 @@ export default function Footer() {
           Built with <Heart size={14} className={styles.heart} /> using React + Vite &copy; {new Date().getFullYear()}
         </p>
 
-        {/* 隐身管理入口 */}
+        {/* Hidden admin entry */}
         <button
           className={`${styles.adminEntry} ${isAdmin ? styles.adminActive : ''}`}
           onClick={openLogin}
-          title="管理入口"
-          aria-label="管理员入口"
+          title="Admin panel"
+          aria-label="Admin panel"
         >
           <KeyRound size={14} />
         </button>

@@ -14,7 +14,7 @@ export default function Skills() {
   return (
     <div className="page">
       <div className="container">
-        <SectionTitle title="技能" subtitle="我的技术栈与能力" />
+        <SectionTitle title="Skills & Expertise" subtitle="Technical stack and core competencies" />
 
         <div className={styles.grid}>
           {skills.categories.map((category) => {

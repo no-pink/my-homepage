@@ -43,10 +43,10 @@ export default function DailyTask({ task, projectId, stepId, projectColor }) {
       </span>
       <span className={`${styles.taskDate} ${isOverdue ? styles.overdueDate : ''}`}>
         {task.date}
-        {isOverdue && ' ⚠'}
+        {isOverdue && ' !'}
       </span>
       {isAdmin && (
-        <button className={styles.taskDelete} onClick={handleDelete} title="删除任务">
+        <button className={styles.taskDelete} onClick={handleDelete} title="Delete task">
           <Trash2 size={12} />
         </button>
       )}

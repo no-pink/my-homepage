@@ -1,68 +1,68 @@
-# no-pink — 个人主页
+# no-pink — Personal Homepage
 
-基于 React + Vite 构建的个人主页网站，包含个人信息展示和学习研究计划管理功能。
+A personal homepage built with React + Vite, featuring portfolio showcase and a structured learning plan manager.
 
-## 页面
+## Pages
 
-| 页面 | 路径 | 内容 |
-|------|------|------|
-| 首页 | `/` | Hero 大图 + 简短介绍 |
-| 关于我 | `/about` | 详细个人简介、教育背景 |
-| 技能 | `/skills` | 技能分类展示 |
-| 项目 | `/projects` | 项目作品卡片 |
-| 学习计划 | `/plan` | 学习研究计划管理（支持增删改） |
-| 经历 | `/timeline` | 教育和工作经历时间线 |
-| 博客 | `/blog` | 博客文章列表 |
-| 联系 | `/contact` | 联系方式 + 社交链接 |
+| Page | Path | Content |
+|------|------|---------|
+| Home | `/` | Hero section + quick navigation |
+| About | `/about` | Personal bio & background |
+| Skills | `/skills` | Technical skills by category |
+| Projects | `/projects` | Project portfolio |
+| Study Plan | `/plan` | Learning roadmap with CRUD management |
+| Journey | `/timeline` | Education & experience timeline |
+| Blog | `/blog` | Blog post listing |
+| Contact | `/contact` | Contact info + social links |
 
-## 技术栈
+## Tech Stack
 
-- **框架**: React 19 + React Router v7
-- **构建**: Vite 8
-- **样式**: CSS Modules
-- **图标**: Lucide React
-- **部署**: GitHub Pages（静态站点）
+- **Framework**: React 19 + React Router v7
+- **Build Tool**: Vite 8
+- **Styling**: CSS Modules
+- **Icons**: Lucide React
+- **Deployment**: GitHub Pages (static site)
 
-## 本地运行
+## Local Development
 
 ```bash
-# 安装依赖
+# Install dependencies
 npm install
 
-# 启动开发服务器
+# Start dev server
 npm run dev
 
-# 生产构建
+# Build for production
 npm run build
 
-# 预览构建结果
+# Preview production build
 npm run preview
 ```
 
-## 项目结构
+## Project Structure
 
 ```
 src/
-├── main.jsx                 # 入口
-├── App.jsx                  # 根组件 + 路由
-├── index.css                # 全局样式 + CSS 变量
+├── main.jsx                 # Entry point
+├── App.jsx                  # Root component + routing
+├── index.css                # Global styles + CSS variables
 ├── components/
-│   ├── Navbar/              # 顶部导航栏
-│   ├── Footer/              # 页脚
-│   └── shared/              # 通用组件
+│   ├── Navbar/              # Top navigation bar
+│   ├── Footer/              # Page footer
+│   └── shared/              # Shared components
 ├── pages/
-│   ├── Home/                # 首页
-│   ├── About/               # 关于我
-│   ├── Skills/              # 技能
-│   ├── Projects/            # 项目
-│   ├── Plan/                # 学习计划（核心）
-│   ├── Timeline/            # 经历时间线
-│   ├── Blog/                # 博客
-│   └── Contact/             # 联系
-├── data/                    # 静态数据文件
-└── context/                 # React Context（认证等）
+│   ├── Home/                # Home page
+│   ├── About/               # About me
+│   ├── Skills/              # Skills showcase
+│   ├── Projects/            # Project portfolio
+│   ├── Plan/                # Study plan (core feature)
+│   ├── Timeline/            # Experience timeline
+│   ├── Blog/                # Blog
+│   └── Contact/             # Contact page
+├── data/                    # Static data files
+└── context/                 # React Context (auth, etc.)
 ```
 
-## 部署
+## Deployment
 
-项目通过 GitHub Actions 自动部署到 GitHub Pages。推送到 `main` 分支即可触发部署。
+Automatically deployed to GitHub Pages via GitHub Actions. Pushing to the `main` branch triggers deployment.

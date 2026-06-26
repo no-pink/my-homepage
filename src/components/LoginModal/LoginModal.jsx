@@ -25,7 +25,7 @@ export default function LoginModal() {
     if (ok) {
       closeLogin();
     } else {
-      setError('密码错误，请重试');
+      setError('Incorrect password. Please try again.');
       setPassword('');
     }
   };
@@ -36,27 +36,27 @@ export default function LoginModal() {
     <div className={styles.overlay} onClick={closeLogin}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         {isAdmin ? (
-          // 已登录状态 - 显示退出
+          // Logged in — show admin panel
           <div className={styles.adminPanel}>
             <div className={styles.adminBadge}>
               <span className={styles.adminDot} />
-              管理员模式已开启
+              Admin Mode Active
             </div>
             <p className={styles.adminHint}>
-              你现在可以编辑学习计划、管理项目内容。访客不会看到这些编辑功能。
+              You can now edit the study plan and manage project content. Visitors won't see these editing controls.
             </p>
             <button className={styles.logoutBtn} onClick={() => { logout(); closeLogin(); }}>
-              <LogOut size={16} /> 退出管理
+              <LogOut size={16} /> Sign Out
             </button>
           </div>
         ) : (
-          // 未登录 - 密码输入
+          // Not logged in — password input
           <>
             <div className={styles.iconWrap}>
               <Lock size={24} />
             </div>
-            <h3 className={styles.title}>管理员登录</h3>
-            <p className={styles.hint}>输入密码解锁编辑功能</p>
+            <h3 className={styles.title}>Admin Login</h3>
+            <p className={styles.hint}>Enter password to unlock editing</p>
             <form onSubmit={handleSubmit}>
               <div className={styles.inputRow}>
                 <input
@@ -64,7 +64,7 @@ export default function LoginModal() {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => { setPassword(e.target.value); setError(''); }}
-                  placeholder="请输入密码"
+                  placeholder="Enter password"
                   className={error ? styles.inputError : ''}
                 />
                 <button
@@ -78,8 +78,8 @@ export default function LoginModal() {
               </div>
               {error && <p className={styles.error}>{error}</p>}
               <div className={styles.actions}>
-                <button type="button" className={styles.cancelBtn} onClick={closeLogin}>取消</button>
-                <button type="submit" className={styles.confirmBtn}>登录</button>
+                <button type="button" className={styles.cancelBtn} onClick={closeLogin}>Cancel</button>
+                <button type="submit" className={styles.confirmBtn}>Login</button>
               </div>
             </form>
           </>

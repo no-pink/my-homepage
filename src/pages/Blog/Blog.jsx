@@ -7,7 +7,7 @@ export default function Blog() {
   return (
     <div className="page">
       <div className="container">
-        <SectionTitle title="博客" subtitle="记录思考与成长" />
+        <SectionTitle title="Blog" subtitle="Thoughts, learnings & reflections" />
 
         <div className={styles.grid}>
           {blogPosts.map((post) => (
@@ -34,7 +34,7 @@ export default function Blog() {
                     ))}
                   </div>
                   <a href={post.url} className={styles.readMore}>
-                    阅读文章 <ArrowRight size={14} />
+                    Read More <ArrowRight size={14} />
                   </a>
                 </div>
               </div>
