@@ -216,4 +216,11 @@ const defaultPlan = [
   },
 ];
 
+// ============================================================
+// Bump this version number each time you update the plan.
+// Visitors will automatically receive the new plan while their
+// task completion status (done/not done) is preserved by ID.
+// ============================================================
+export const PLAN_VERSION = 1;
+
 export default defaultPlan;

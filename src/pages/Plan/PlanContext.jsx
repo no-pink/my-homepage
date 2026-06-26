@@ -1,7 +1,8 @@
 import { createContext, useContext, useReducer, useEffect, useCallback } from 'react';
-import defaultPlan from '@/data/defaultPlan';
+import defaultPlan, { PLAN_VERSION } from '@/data/defaultPlan';
 
-const STORAGE_KEY = 'my-home-plan-data-v2';
+const STORAGE_KEY = 'my-home-plan-data';
+const VERSION_KEY = 'my-home-plan-version';
 
 const PlanContext = createContext(null);
 
@@ -25,10 +26,67 @@ function recalcProject(project) {
   return { ...project, steps: stepsWithProgress, progress: overallProgress };
 }
 
+/**
+ * Merge `done` statuses from old localStorage data into the new source-of-truth plan.
+ * Tasks that exist in both old and new keep their old `done` value.
+ * Tasks new in source start as `done: false`.
+ * Steps keep their old `completed` status if matched by ID.
+ */
+function mergePlanData(sourcePlan, storedPlan) {
+  // Build lookup of old task done status: "projectId|stepId|taskId" → done
+  const oldTaskStatus = new Map();
+  const oldStepStatus = new Map();
+  if (storedPlan && Array.isArray(storedPlan)) {
+    for (const proj of storedPlan) {
+      if (proj.steps) {
+        for (const step of proj.steps) {
+          oldStepStatus.set(`${proj.id}|${step.id}`, step.completed);
+          if (step.dailyTasks) {
+            for (const task of step.dailyTasks) {
+              oldTaskStatus.set(`${proj.id}|${step.id}|${task.id}`, task.done);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return sourcePlan.map((proj) => ({
+    ...proj,
+    steps: proj.steps.map((step) => ({
+      ...step,
+      completed: oldStepStatus.has(`${proj.id}|${step.id}`)
+        ? oldStepStatus.get(`${proj.id}|${step.id}`)
+        : step.completed || false,
+      dailyTasks: step.dailyTasks.map((task) => ({
+        ...task,
+        done: oldTaskStatus.has(`${proj.id}|${step.id}|${task.id}`)
+          ? oldTaskStatus.get(`${proj.id}|${step.id}|${task.id}`)
+          : task.done || false,
+      })),
+    })),
+  }));
+}
+
 function loadData() {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
+    const storedVersion = localStorage.getItem(VERSION_KEY);
+    const storedRaw = localStorage.getItem(STORAGE_KEY);
+
+    // No stored data → use source directly
+    if (!storedRaw) {
+      return defaultPlan;
+    }
+
+    // Source and storage same version → use stored data (preserves user edits)
+    if (storedVersion === String(PLAN_VERSION)) {
+      return JSON.parse(storedRaw);
+    }
+
+    // Source is newer → merge done statuses into new source plan
+    const stored = JSON.parse(storedRaw);
+    const merged = mergePlanData(defaultPlan, stored);
+    return merged;
   } catch { /* ignore */ }
   return defaultPlan;
 }
@@ -36,6 +94,7 @@ function loadData() {
 function saveData(data) {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    localStorage.setItem(VERSION_KEY, String(PLAN_VERSION));
   } catch { /* ignore */ }
 }
 
