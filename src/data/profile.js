@@ -1,10 +1,10 @@
 const profile = {
-  name: "李卿可",
-  nameEn: "Qingke Li",
+  name: "no-pink",
+  nameEn: "no-pink",
   title: "金融工程（计算机与金融实验班）",
   subtitle: "南京大学 · 热爱技术，探索金融与计算的交叉领域",
   avatar: `${import.meta.env.BASE_URL}avatar.jpg`,
-  bio: `你好！我是李卿可，南京大学金融工程（计算机与金融实验班）大三学生。
+  bio: `你好！我是 no-pink，南京大学金融工程（计算机与金融实验班）大三学生。
 
 我的专业横跨计算机科学与金融工程，主修程序设计、数据结构与金融算法、金融软件工程、数字逻辑与计算机组成、金融大数据处理技术等课程。
 

@@ -36,7 +36,7 @@ export default function Navbar() {
       <div className={`container ${styles.navInner}`}>
         <NavLink to="/" className={styles.logo}>
           <span className={styles.logoIcon}>✦</span>
-          <span className={styles.logoText}>李卿可</span>
+          <span className={styles.logoText}>no-pink</span>
           {isAdmin && <span className={styles.adminDot} title="管理员模式" />}
         </NavLink>
 
