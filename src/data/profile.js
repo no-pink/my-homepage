@@ -1,20 +1,21 @@
 const profile = {
-  name: "你的名字",
-  nameEn: "Your Name",
-  title: "全栈开发工程师",
-  subtitle: "热爱技术，热爱生活，终身学习者",
-  avatar: "", // 头像URL，留空使用默认占位
-  bio: `你好！我是一名全栈开发工程师，致力于用技术创造价值。
+  name: "李卿可",
+  nameEn: "Qingke Li",
+  title: "金融工程（计算机与金融实验班）",
+  subtitle: "南京大学 · 热爱技术，探索金融与计算的交叉领域",
+  avatar: `${import.meta.env.BASE_URL}avatar.jpg`,
+  bio: `你好！我是李卿可，南京大学金融工程（计算机与金融实验班）大三学生。
 
-我拥有X年的软件开发经验，专注于Web前端和后端技术。我相信技术的力量可以改变世界，也相信持续学习和分享是成长的关键。
+我的专业横跨计算机科学与金融工程，主修程序设计、数据结构与金融算法、金融软件工程、数字逻辑与计算机组成、金融大数据处理技术等课程。
 
-在业余时间，我喜欢参与开源项目、撰写技术博客，也会花时间阅读、旅行和摄影。`,
-  location: "北京，中国",
-  email: "hello@example.com",
+我曾在南京星环智能科技和南京证券实习，积累了数据库测试、金融产品估值定价与智能调仓等实战经验。同时积极参与科研训练与数学建模竞赛，具备扎实的编程能力和团队协作精神。
+
+在业余时间，我参与书院和学院的新媒体宣传工作，负责推文撰写与美编。我性格开朗、善于沟通，对金融科技领域有浓厚兴趣和清晰的职业规划。`,
+  location: "南京，中国",
+  email: "231275028@smail.nju.edu.cn",
+  phone: "18974109530",
   socialLinks: [
-    { name: "GitHub", url: "https://github.com/yourusername", icon: "github" },
-    { name: "LinkedIn", url: "https://linkedin.com/in/yourusername", icon: "linkedin" },
-    { name: "Twitter", url: "https://twitter.com/yourusername", icon: "twitter" },
+    { name: "GitHub", url: "https://github.com/no-pink", icon: "github" },
   ],
 };
 

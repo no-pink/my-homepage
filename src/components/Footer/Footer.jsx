@@ -1,4 +1,4 @@
-import { FolderGit, Send, Link2, Heart, KeyRound } from 'lucide-react';
+import { FolderGit, Heart, KeyRound } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import styles from './Footer.module.css';
 
@@ -9,14 +9,8 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
         <div className={styles.social}>
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className={styles.iconLink} aria-label="GitHub">
+          <a href="https://github.com/no-pink" target="_blank" rel="noopener noreferrer" className={styles.iconLink} aria-label="GitHub">
             <FolderGit size={20} />
-          </a>
-          <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className={styles.iconLink} aria-label="Twitter">
-            <Send size={20} />
-          </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className={styles.iconLink} aria-label="LinkedIn">
-            <Link2 size={20} />
           </a>
         </div>
         <p className={styles.copy}>
