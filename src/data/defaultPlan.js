@@ -4,8 +4,8 @@ const defaultPlan = [
   // ============================================================
   {
     id: "plan-grad-exam",
-    title: "Graduate Entrance Exam — NJU School of Intelligent Science & Technology",
-    description: "Preparing for the Dec 2026 national graduate entrance exam. Target: School of Intelligent Science and Technology, Nanjing University. Subjects: Math I (Advanced Calculus + Linear Algebra + Probability), English I, Politics, and AI/ML specialized course.",
+    title: "Graduate Entrance Exam — AI & Intelligent Systems Track",
+    description: "Preparing for the Dec 2026 national graduate entrance exam. Target program: AI & Intelligent Systems at a top-tier university. Subjects: Math I (Advanced Calculus + Linear Algebra + Probability), English I, Politics, and AI/ML specialized course.",
     deadline: "2026-12-19",
     color: "#E07A5F",
     createdAt: "2026-06-01",
@@ -221,6 +221,6 @@ const defaultPlan = [
 // Visitors will automatically receive the new plan while their
 // task completion status (done/not done) is preserved by ID.
 // ============================================================
-export const PLAN_VERSION = 1;
+export const PLAN_VERSION = 2;
 
 export default defaultPlan;
