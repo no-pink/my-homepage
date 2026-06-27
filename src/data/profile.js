@@ -12,7 +12,7 @@ I've gained hands-on experience through internships in FinTech and quantitative 
 
 Outside of academics, I contribute to new media and content strategy for student organizations, honing skills in technical writing, visual communication, and cross-functional teamwork. I'm driven by a deep curiosity for financial technology and a clear vision for my career in quantitative finance.`,
   location: "China",
-  email: "",
+  email: "qingkeli959@gmail.com",
   phone: "",
   socialLinks: [
     { name: "GitHub", url: "https://github.com/no-pink", icon: "github" },
